@@ -1,0 +1,336 @@
+/*|| UNIVERSAL CUSTOM CSS VARIABLES */
+:root {
+  --color-primary-red: hsl(357, 92%, 47%);
+  --color-red        : hsl(357, 95%, 49%);
+  --color-black-light: hsl(0, 0%, 25%);
+  --color-black-ish  : hsl(0, 0%, 19%);
+  --color-black      : hsl(0, 0%, 0%);
+  --color-black-alpha: hsla(0, 0%, 0%, 60%);
+  --color-white      : hsl(0, 0%, 100%);
+  --color-white-dark : hsl(240, 7%, 58%);
+  --color-orange     : hsl(33, 100%, 52%);
+  --color-blue       : hsl(211, 100%, 46%);
+  --color-grey-ish   : hsl(0, 0%, 45%);
+  --color-grey       : hsl(0, 0%, 55%);
+  --color-grey-dark  : hsl(0, 0%, 13%);
+
+  --fw-thin   : 100;
+  --fw-light  : 200;
+  --fw-regular: 400;
+  --fw-medium : 700;
+  --fw-bold   : 900;
+
+  --top-content-metric-space: 3.2rem 1.6rem;
+  --top-content-height      : 56rem;
+  --content-metric-space    : 5.4rem 1.6rem;
+  --footer-metric-space     : 5.4rem 3.6rem 2.4rem;
+  --divider-height          : 0.8rem;
+
+  /*! consistent gutters in web page */
+  /* --small-gutters: --rem;
+  --medium-gutters: --rem;
+  --large-gutters: --rem;
+
+  --small-space: --rem;
+  --medium-space: --rem;
+  --large-space: --rem;
+  --extra-large-space: --rem; */
+}
+
+/*|| FONT DEFINITION */
+@font-face {
+  font-family : "Netflix sans";
+  src         : url("../fonts/NetflixSansThin.ttf");
+  font-style  : normal;
+  font-weight : 100;
+  font-display: swap;
+}
+@font-face {
+  font-family : "Netflix sans";
+  src         : url("../fonts/NetflixSansLight.ttf");
+  font-style  : normal;
+  font-weight : 200;
+  font-display: swap;
+}
+@font-face {
+  font-family : "Netflix sans";
+  src         : url("../fonts/NetflixSansRegular.ttf");
+  font-style  : normal;
+  font-weight : 400;
+  font-display: swap;
+}
+@font-face {
+  font-family : "Netflix sans";
+  src         : url("../fonts/NetflixSansMedium.ttf");
+  font-style  : normal;
+  font-weight : 700;
+  font-display: swap;
+}
+@font-face {
+  font-family : "Netflix sans";
+  src         : url("../fonts/NetflixSansBold.ttf");
+  font-style  : normal;
+  font-weight : 900;
+  font-display: swap;
+}
+
+/*|| UNIVERSAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol, 
+dl {
+  list-style: none;
+}
+
+img,
+video {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  font-size: inherit;
+  text-decoration-line: none;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: var(--fw-light);
+  text-shadow: initial;
+  position: absolute;
+  top: 50%;
+  left: var(--padding-inline);
+  transform: translateY(-50%);
+  color: var(--color-white-dark);
+  pointer-events: none;
+  transition: top 100ms, font-size 100ms;
+}
+
+button,
+select,
+input:not([type="checkbox"]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 1.2em var(--padding-inline) var(--padding-inline);
+  font-size: 1.6rem;
+  border-radius: 4px;
+}
+
+input:not([type="checkbox"]) {
+  color: var(--color-black);
+  border: 1px solid var(--color-grey);
+  border-bottom: 3px solid transparent;
+}
+
+input:not([type="checkbox"]):invalid {
+  border-bottom-color: var(--color-orange);
+}
+
+input:not([type="checkbox"]):is(:focus-visible, :not(:placeholder-shown))
+  ~ label {
+  font-size: 1.2rem;
+  top: 1rem;
+  font-weight: var(--fw-medium);
+}
+
+input:not([type="checkbox"]):invalid ~ .form-message {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  padding: 0.75em 1.2em;
+  margin-block-start: 0.75em;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+button[type="submit"] i {
+  margin-inline-start: 0.4rem;
+}
+
+button[type="submit"]:is(:hover, :focus) {
+  opacity: 1;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Netflix sans", Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+/*|| UTILITIES */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.align-text-start {
+  text-align: start !important;
+}
+
+.align-text-center {
+  text-align: center !important;
+}
+
+.self-center {
+  margin-inline: auto !important;
+}
+
+.text-blue {
+  color: var(--color-blue) !important;
+}
+
+.gap-1rem {
+  justify-content: unset;
+  gap: 1rem;
+}
+
+.divider {
+  border-bottom: var(--divider-height) solid var(--color-grey-dark);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4em 0.5em;
+  font-size: 1.6rem;
+  color: inherit;
+  background-color: var(--color-red);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/*|| LANGUAGE SELECTION */
+.language-select-container {
+  display: inline-block;
+  position: relative;
+}
+
+.language-select {
+  --color-white-dark: hsl(0, 0%, 67%);
+  padding: 0.4em 1.8em 0.4em 1.6em;
+  font-size: 1.4rem;
+  color: currentColor;
+  background-color: transparent;
+  border: 1px solid var(--color-white-dark);
+  border-radius: 2px;
+}
+
+.language-select option {
+  display: inline-block;
+  background-color: var(--color-white-dark);
+}
+
+.globe {
+  font-size: 0.8em;
+  color: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+}
+
+.triangle-down {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translate(50%, -50%);
+  border-top: 0.4em solid var(--color-white);
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+}
+
+/*|| HEADING AND DESCRIPTION */
+.heading {
+  margin-block-end: 2rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.desc {
+  margin-block-end: 1em;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.form-group {
+  --padding-inline: 0.8rem;
+  position: relative;
+}
+
+.form-group ~ .form-group {
+  margin-block-start: 1em;
+}
+
+.email-group {
+  max-width: 50rem;
+}
+
+.form-message {
+  width: 100%;
+  line-height: 2.4rem;
+  display: block;
+  text-align: start;
+  color: var(--color-orange);
+  display: none;
+}
+
+/*|| CONTENT */
+.content,
+.content-text-only {
+  max-inline-size: 1280px;
+  margin-inline: auto;
+  padding: var(--content-metric-space);
+  text-align: center;
+}
+
+.content-text :where(.desc, .heading) {
+  padding: unset;
+}
+
+.content-text .desc {
+  margin-block-end: unset;
+}
+
+.content-illustrator {
+  position: relative;
+  max-width: 600px;
+}
+
+.image-block-padding {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}

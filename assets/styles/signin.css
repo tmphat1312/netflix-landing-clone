@@ -1,0 +1,220 @@
+/*|| UNIVERSAL */
+body {
+  color: var(--color-grey-ish);
+}
+
+input:not([type="checkbox"]) {
+  color: inherit;
+  border-color: transparent;
+  background-color: var(--color-black-ish);
+  color: var(--color-white);
+}
+
+label {
+  font-weight: var(--fw-light) !important;
+}
+
+input:is(
+  :focus-visible, :not(:placeholder-shown)
+  ) ~ label {
+  font-weight: var(--fw-light);
+}
+
+button[type="submit"] {
+  width: 100%;
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+}
+
+label[for="remember-me"] {
+  position: static; 
+  pointer-events: all;
+  cursor: pointer;
+  color: inherit;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: var(--color-grey-ish);
+  transform: translateY(-2px);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  padding-inline: 1rem;
+  height: 100%;
+}
+
+/*|| HEADER */
+header {
+  max-inline-size: 150rem;
+  padding-block-start: 2rem;
+}
+
+/*|| LOGO */
+.logo {
+  width: 75px;
+  color: var(--color-primary-red);
+}
+
+.logo > svg {
+  inline-size: 100%;
+  fill: currentColor;
+}
+
+/*|| SIGN IN FORM */
+.signin {
+  margin-block-start: 2rem;
+  max-inline-size: 45rem;
+  padding-inline: 1rem;
+  padding-block: 1rem 2.8rem;
+  background-color: var(--color-black-alpha);
+}
+
+.signin-form {
+  margin-block-end: 5rem;
+}
+
+.signin-heading {
+  font-size: 3.2rem;
+  color: var(--color-white);
+  margin-block-end: 3rem;
+}
+
+.form-group {
+  --padding-inline: 1.6rem;
+  position: relative;
+}
+
+.form-message {
+  font-size: 1.3rem;
+  margin-block-start: 0.2rem;
+}
+
+.form-group:focus-within .toggle-show-password {
+  display: revert;
+}
+
+.toggle-show-password {
+  position: absolute;
+  inset-inline-end: 1em;
+  inset-block-start: 2.2rem;
+  cursor: pointer;
+  /* display: none; */
+  z-index: 1;
+}
+
+.toggle-show-password .pass-hide {
+  display: none;
+}
+
+.form-actions {
+  margin-block-start: 1.6rem;
+  font-size: 1.4rem;
+  color: hsl(180, 10%, 67%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-actions a {
+  color: inherit;
+  font-size: inherit;
+}
+
+.to-signup {
+  word-spacing: 0.15rem;
+  margin-block-end: 1em;
+}
+
+.to-signup a {
+  color: var(--color-white);
+}
+
+.captcha {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.captcha > * ~ * {
+  margin-block-start: 1em;
+}
+
+.info {
+  visibility: hidden;
+}
+
+/*|| FOOTER */
+.footer {
+  background-color: var(--color-black-alpha);
+  padding-block: 2rem 4rem;
+  border-top: 2px solid var(--color-black-ish);
+}
+
+/*|| RESPONSIVE */
+@media only screen and (min-width: 440px) {
+  header {
+    padding-block-start: 1.6em;
+  }
+
+  .wrapper {
+    padding-inline: 1.6rem;
+  }
+
+  .logo {
+    width: 168px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  header {
+    padding-block-start: 2.4rem;
+  }
+
+  .wrapper {
+    padding-inline: 2rem;
+  }
+  
+  .logo {
+    width: 75px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  body {
+    background-image: url("../images/sign-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .container {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .wrapper {
+    margin-block-end: 9.2rem;
+  }
+
+  .signin {
+    min-block-size: 72.5rem;
+    padding: 6rem 6.8rem 4rem 6.8rem;
+    border: none;
+    opacity: 0.95;
+  }
+
+  .wrapper {
+    padding-inline: calc(3rem + 1vw);
+  }
+
+  .logo {
+    width: 168px;
+  }
+}

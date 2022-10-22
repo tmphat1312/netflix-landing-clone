@@ -1,0 +1,428 @@
+.top-content {
+  block-size: var(--top-content-height);
+  max-inline-size: 180rem;
+  padding: var(--top-content-metric-space);
+  background-image: url("../images/sign-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  backdrop-filter: opacity(10%);
+  isolation: isolate;
+}
+
+.top-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 60%);
+  z-index: -1;
+}
+
+#ontv-video {
+  width: 74%;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  top: 46.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+#tv-illustrator {
+  width: 100%;
+}
+
+/*|| SIGN UP FORM */
+.signup {
+  max-inline-size: 66rem;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  font-size: 1.6rem;
+  text-align: center;
+  text-shadow: 0 0 2px var(--color-black);
+  line-height: 1.2;
+}
+
+.signup :is(.heading, .desc) {
+  padding-inline: 2rem;
+}
+
+.signup .desc:last-of-type {
+  margin-block-end: 1rem;
+}
+
+/*|| DOWNLOADING ILLUSTRATION */
+.download-film {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.6rem 0.6rem 1.2rem;
+  border: 2px solid var(--color-black-light);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 6%;
+  left: 14%;
+  right: 14%;
+  background-color: var(--color-black);
+}
+
+.film-thumb {
+  width: 35px;
+  border-radius: 4px;
+  box-shadow: 0 0 2px var(--color-white-dark);
+}
+
+.film-text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: start;
+}
+
+.film-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.download-actions {
+  font-size: 2rem;
+}
+
+.first {
+  margin-inline-end: -0.9rem;
+  animation: Download 6000ms ease infinite;
+  transform-origin: bottom center;
+}
+
+.second {
+  animation: Appear 6000ms infinite;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+/*|| GET THE APP */
+.get-the-app {
+  padding-block: 1em;
+  font-size: 1.8rem;
+  text-align: start;
+}
+
+.get-the-app i {
+  font-size: inherit;
+  transform: translateY(6%);
+}
+
+/*|| FREQUENTLY ASKED QUESTIONS */
+.content.faq {
+  display: block;
+  padding-inline: 0;
+}
+
+.faq {
+  font-size: 1.8rem;
+}
+
+.faq .heading{
+  text-align: center;
+}
+
+.faq-list i {
+  transition: transform 200ms;
+}
+
+.faq-list .active i {
+  transform: rotateZ(-45deg);
+}
+
+.faq-list {
+  --padding: 1em 1.2em;
+  max-inline-size: 81.5rem;
+  margin-top: 1.5em;
+}
+
+.faq-list > * {
+  cursor: pointer;
+}
+
+.faq-list > * + * {
+  margin-block-start: 1.2rem;
+}
+
+.question-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+}
+
+.question-wrapper, .answer-wrapper {
+  background-color: var(--color-black-ish);
+}
+
+.answer-wrapper {
+  max-block-size: 0;
+  text-align: start;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.active .answer-wrapper {
+  margin-block-start: 1px;
+  padding: var(--padding);
+  max-block-size: unset;
+}
+
+.answer + * {
+  margin-block-start: 1em;
+}
+
+.faq-signup {
+  padding: 2em 1em 0;
+}
+
+.faq-signup .desc {
+  padding-inline: 3rem;
+}
+
+/*|| ANIMATIONS */
+@keyframes Download {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes Appear {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  } 
+}
+
+/*|| RESPONSIVE */
+@media only screen  and (min-width: 31em) {
+  .download-film {
+    padding: 1rem 2.6rem 1rem 1.2rem;
+  }
+
+  .faq-list {
+    margin-inline: 10%;
+  }
+}
+
+@media only screen  and (min-width: 37.5em) {
+  :root {
+    --top-content-metric-space: 3rem 4.4rem;
+    --top-content-height: 57.8rem;
+    --content-metric-space: 5.4rem 4.4rem;
+  }
+
+  .top-content {
+    block-size: max(100vh, var(--top-content-height));
+  }
+  
+  .btn {
+    padding: 0.6em 1em;
+  }
+
+  .language-select {
+    padding: 0.6em 1.8em 0.6em 2em;
+  }
+
+  .logo {
+    width: 112px;
+  }
+
+  .actions {
+    gap: 2.4rem;
+  }
+
+  .heading {
+    font-size: 5rem;
+  }
+  
+  .desc, .get-the-app {
+    font-size: 2rem;
+  }
+
+  .signup .desc {
+    font-size: 2.6rem;
+  }
+  
+  .signup .desc:last-of-type {
+    margin-block-end: 1.5rem;
+    padding-inline: 3em;
+  }
+
+  .download-film {
+    padding: 1rem 2.6rem 1rem 1.2rem;
+    left: 18%;
+    right: 18%;
+  }
+
+  .film-thumb {
+    width: 45px;
+  }
+
+  .film-name {
+    font-size: 1.6rem;
+  }
+
+  .downloading {
+    font-size: 1.44rem;
+  }
+
+  .faq {
+    font-size: 2rem;
+  }
+
+  .faq .heading {
+    font-size: 4rem;
+  }
+}
+
+@media only screen  and (min-width: 59.25em) {
+  :root {
+    --top-content-height: 80rem;
+    --top-content-metric-space: 3rem 5rem;
+    --content-metric-space: 5.4rem 5rem;
+  }
+
+  .grid-first-column {
+    grid-area: 1 / 1;
+  }
+
+  .logo {
+    width: 134px;
+  }
+
+  .actions {
+    gap: 3rem;
+  }
+
+  .signup-form {
+    display: grid;
+    grid-template: auto / 2fr 1fr;
+  }
+
+  .signup .desc:last-of-type {
+    font-size: 1.8rem;
+    padding-inline: 2em;
+  }
+
+  .form-group {
+    --padding-inline: 1.2rem;
+    flex: 1;
+    width: 100%;
+  }
+
+  .form-group ~ .form-group {
+    margin-block-start: 0;
+  }
+
+  .form-label {
+    font-size: 1.6rem;
+  }
+
+  input:is(
+  :focus, :focus-visible, :not(:placeholder-shown)
+  ) ~ label {
+    font-size: 1.4rem;
+    top: 1.2rem;
+  }
+
+  input:not([type="checkbox"]) {
+    padding: 1.6em var(--padding-inline) var(--padding-inline);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .form-message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  button[type="submit"] {
+    height: 100%;
+    width: 100%;
+    font-size: 2.6rem;
+    padding: unset;
+    margin: unset;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    text-align: start;
+  } 
+
+  .content-text {
+    padding-right: 20%;
+  }
+
+  .content-reverse {
+    grid-template-columns: 2fr 3fr;
+  } 
+
+  .content-reverse .content-text {
+    padding-right: unset;
+    padding-left: 20%;
+  }
+
+  .content-text .desc,
+  .get-the-app {
+    font-size: 2.6rem;
+  }
+
+  .download-film {
+    left: 16%;
+    right: 16%;
+  }
+
+  .faq {
+    font-size: 2.6rem;
+  }
+
+  .faq-list {
+    margin-inline: auto;
+  }
+
+  .faq .heading {
+    font-size: 5rem;
+  }
+}
+
+@media only screen  and (min-width: 90em) {
+  .logo {
+    width: 168px;
+  }
+  
+  .heading {
+    font-size: 6.4rem;
+  }
+}
+
