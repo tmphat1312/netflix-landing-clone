@@ -1,4 +1,4 @@
-# Netflix Clone
+# Netflix Clone - My first project
 
 This is a Netflix clone landing page created for practice purposes. It is not an official Netflix product. The page is responsive and uses HTML, CSS, and JavaScript.
 Please visit official Netflix website at [netflix.com](https://www.netflix.com/).
